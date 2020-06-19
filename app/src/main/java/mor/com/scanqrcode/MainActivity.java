@@ -20,5 +20,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void btnMenu(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                Main2Activity.class);
+        startActivity(intent);
+    }
+
 
 }
