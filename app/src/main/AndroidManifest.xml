@@ -12,8 +12,10 @@
         <activity
             android:name=".Main3Activity"
             android:label="Metalurgica MOR" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main2Activity"
+            android:label="Metalurgica MOR"/>
+        <activity android:name=".MainActivity"
+            android:label="Metalurgica MOR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
