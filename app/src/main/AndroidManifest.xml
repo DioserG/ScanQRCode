@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/ic_launcher_mor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Main3Activity"
+            android:label="Metalurgica MOR" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
