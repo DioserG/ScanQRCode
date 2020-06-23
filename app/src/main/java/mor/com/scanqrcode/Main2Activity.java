@@ -47,7 +47,7 @@ public class Main2Activity extends AppCompatActivity
 
     EditText teste;
     Button btnTeste;
-    TextView testeQRCode;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,7 +60,6 @@ public class Main2Activity extends AppCompatActivity
 
         teste    = (EditText) findViewById(R.id.teste);
         btnTeste = (Button)   findViewById(R.id.btnTeste);
-        //testeQRCode = (TextView)  findViewById(R.id.testeQRCode);
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;
@@ -75,7 +74,7 @@ public class Main2Activity extends AppCompatActivity
                 integrador.setCameraId(0); // se 1 é camera frontal
                 integrador.initiateScan();
 
-                executar("http://192.168.2.42:80/sucata/registro.php");
+                //executar("http://192.168.2.42:80/sucata/registro.php");
             }
         }); // Fim chamada leitura QRCode
 
@@ -84,7 +83,7 @@ public class Main2Activity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-               // executar("http://192.168.2.42:80/sucata/registro.php");
+                executar("http://192.168.2.42:80/sucata/registro.php");
             }
         }); // Fim chamada leitura QRCode
     }
@@ -99,12 +98,9 @@ public class Main2Activity extends AppCompatActivity
             if(result.getContents() != null)
             {
                 alert(result.getContents());
-                //Toast.makeText(getApplicationContext(),result.getContents(),Toast.LENGTH_LONG).show();
                 scan_valor = String.valueOf(result.getContents());
-                testeQRCode = (TextView) findViewById(R.id.testeQRCode);
-                testeQRCode.setText(scan_valor);
-
-
+                //teste = (EditText) findViewById(R.id.teste);
+                teste.setText(scan_valor);
             }else
              {
                 alert("Scan cancelado!");
@@ -122,7 +118,7 @@ public class Main2Activity extends AppCompatActivity
     {
        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
     }// QRCode Fim funcionalidade
-
+//==================================================================================================
     //Conexão e passagem de dados para banco MySql Sucata utilizando PHP
     private void executar(String URL)
     {
@@ -145,7 +141,7 @@ public class Main2Activity extends AppCompatActivity
             protected Map<String, String> getParams() throws AuthFailureError
             {
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("scan_valor", scan_valor);
+                parametros.put("teste", teste.getText().toString());
                 return parametros;
             }
           };
