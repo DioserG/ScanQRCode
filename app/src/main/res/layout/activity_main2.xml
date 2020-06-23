@@ -8,29 +8,54 @@
     android:orientation="vertical"
     tools:context=".Main2Activity">
 
+    <!-- ### MEMU PRINCIPAL ### -->
+
     <ImageButton
-        android:id="@+id/imageQuiz"
+        android:id="@+id/image_menu_MOR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/ic_launcher_mor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
-        android:text="MENU PRINCIPAL"
-        android:textSize="25dp" />
+        android:text="Menu Principal"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
 
     <Button
         android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="btnScan"
-        android:text="Scan QRCode"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="395dp" />
+        android:layout_gravity="center_horizontal"
+        android:text="Scan QRCode" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="TESTE"
+        android:id="@+id/teste"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"/>
+
+    <Button
+        android:id="@+id/btnTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="TESTE" />
+
+    <TextView
+        android:id="@+id/testeQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
 
 
 </LinearLayout>
