@@ -61,7 +61,7 @@ public class Main2Activity extends AppCompatActivity
         qrcode              = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
 
 
-
+        // Pegando usuário do activity_main
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
         Toast.makeText(this,user_name, Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class Main2Activity extends AppCompatActivity
 
 //==================================================================================================
     //Conexão e passagem de dados para banco MySql Sucata utilizando PHP
-    // Enviando QRCode lido para a tabela tb_sucata
+    // Enviando valores lidos para a tabela tb_sucata
     private void executar(String URL)
     {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
@@ -161,8 +161,9 @@ public class Main2Activity extends AppCompatActivity
     }// Fim conexao banco MySql com PHP
     //==================================================================================================
 
-
-    public void btnLimpar(View view) {
+    // Limpa tela
+    public void btnLimpar(View view)
+    {
         qrcode.setText("");
         peso.setText("");
     }
