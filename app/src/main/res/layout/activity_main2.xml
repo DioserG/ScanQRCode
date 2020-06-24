@@ -48,8 +48,8 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/qrcode"
-        android:hint="Produto QRCode"
+        android:id="@+id/nome"
+        android:hint="Nome usuário logado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -57,11 +57,20 @@
         android:layout_marginTop="100dp"/>
 
     <EditText
+        android:id="@+id/qrcode"
+        android:hint="Produto QRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:enabled="false"/>
+
+    <EditText
         android:id="@+id/peso"
         android:hint="Peso em kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:inputType="numberDecimal"/>
 
     <Button
         android:id="@+id/btnEnviar"

@@ -42,10 +42,10 @@ import static android.os.Build.HOST;
 
 public class Main2Activity extends AppCompatActivity
 {
-    // vem do activity_main2
+
     Button   btnScan, btnEnviar;   // leitura do QRCode
     String   scan_valor;           // captura ao valor do QRCode
-    EditText qrcode, peso;         // Envia para o banco
+    EditText qrcode, peso, nome;   // Envia para o banco
 
 
     @Override
@@ -55,10 +55,20 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
 
         // leitura variáveis
-        btnScan   = (Button)   findViewById(R.id.btnScan);
-        qrcode    = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
-        btnEnviar = (Button)   findViewById(R.id.btnEnviar);
-        peso      = (EditText) findViewById(R.id.peso);
+        btnScan             = (Button)   findViewById(R.id.btnScan);
+        btnEnviar           = (Button)   findViewById(R.id.btnEnviar);
+        peso                = (EditText) findViewById(R.id.peso);
+        qrcode              = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
+
+
+
+        Bundle extra        = getIntent().getExtras();
+        String user_name    = extra.getString("user_name");
+        Toast.makeText(this,user_name, Toast.LENGTH_SHORT).show();
+        nome                = (EditText) findViewById(R.id.nome);
+        nome.setText(user_name);
+
+
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;
@@ -142,6 +152,7 @@ public class Main2Activity extends AppCompatActivity
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("qrcode", qrcode.getText().toString());
                 parametros.put("peso",   peso.getText().toString());
+                parametros.put("nome",   nome.getText().toString());
                 return parametros;
             }
           };
@@ -153,5 +164,6 @@ public class Main2Activity extends AppCompatActivity
 
     public void btnLimpar(View view) {
         qrcode.setText("");
+        peso.setText("");
     }
 }

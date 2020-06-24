@@ -22,16 +22,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        user_name = (EditText) findViewById(R.id.user_name);
         user_pass = (EditText) findViewById(R.id.user_pass);
         btnLogar  = (Button) findViewById(R.id.btnLogar);
 
     }
 
     public void btnMenu(View view) {
+
+        user_name = (EditText) findViewById(R.id.user_name);
+        String user_name2 =(user_name.getText().toString());
+
         Intent intent  = new Intent(MainActivity.this,
                 Main2Activity.class);
+        intent.putExtra("user_name", user_name2);
         startActivity(intent);
+
     }
 
 
