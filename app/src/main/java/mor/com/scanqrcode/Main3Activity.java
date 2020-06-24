@@ -16,7 +16,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class Main3Activity extends AppCompatActivity {
 
-    //Button btnScan;
+    //### Leitura QRCode ###
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

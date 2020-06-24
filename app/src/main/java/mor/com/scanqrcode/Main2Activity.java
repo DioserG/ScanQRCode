@@ -42,11 +42,10 @@ import static android.os.Build.HOST;
 
 public class Main2Activity extends AppCompatActivity
 {
-    Button btnScan;
-    String scan_valor;
-
-    EditText teste;
-    Button btnTeste;
+    // vem do activity_main2
+    Button   btnScan, btnEnviar;   // leitura do QRCode
+    String   scan_valor;           // captura ao valor do QRCode
+    EditText qrcode, peso;         // Envia para o banco
 
 
     @Override
@@ -56,10 +55,10 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
 
         // leitura variáveis
-        btnScan  = (Button)   findViewById(R.id.btnScan);
-
-        teste    = (EditText) findViewById(R.id.teste);
-        btnTeste = (Button)   findViewById(R.id.btnTeste);
+        btnScan   = (Button)   findViewById(R.id.btnScan);
+        qrcode    = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
+        btnEnviar = (Button)   findViewById(R.id.btnEnviar);
+        peso      = (EditText) findViewById(R.id.peso);
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;
@@ -73,12 +72,11 @@ public class Main2Activity extends AppCompatActivity
                 integrador.setPrompt("Câmera Scan");
                 integrador.setCameraId(0); // se 1 é camera frontal
                 integrador.initiateScan();
-
-                //executar("http://192.168.2.42:80/sucata/registro.php");
             }
         }); // Fim chamada leitura QRCode
 
-        btnTeste.setOnClickListener(new View.OnClickListener()
+        //Enviando QRCode para tb_sucata, abertura de conexão
+        btnEnviar.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -99,8 +97,7 @@ public class Main2Activity extends AppCompatActivity
             {
                 alert(result.getContents());
                 scan_valor = String.valueOf(result.getContents());
-                //teste = (EditText) findViewById(R.id.teste);
-                teste.setText(scan_valor);
+                qrcode.setText(scan_valor);
             }else
              {
                 alert("Scan cancelado!");
@@ -113,13 +110,15 @@ public class Main2Activity extends AppCompatActivity
             super.onActivityResult(requestCode,resultCode, data);
          }
     }
-
     private void alert(String msg)
     {
        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
     }// QRCode Fim funcionalidade
+
+
 //==================================================================================================
     //Conexão e passagem de dados para banco MySql Sucata utilizando PHP
+    // Enviando QRCode lido para a tabela tb_sucata
     private void executar(String URL)
     {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
@@ -141,12 +140,18 @@ public class Main2Activity extends AppCompatActivity
             protected Map<String, String> getParams() throws AuthFailureError
             {
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("teste", teste.getText().toString());
+                parametros.put("qrcode", qrcode.getText().toString());
+                parametros.put("peso",   peso.getText().toString());
                 return parametros;
             }
           };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }// Fim conexao banco MySql com PHP
+    //==================================================================================================
 
+
+    public void btnLimpar(View view) {
+        qrcode.setText("");
+    }
 }

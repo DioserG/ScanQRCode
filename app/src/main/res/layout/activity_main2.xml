@@ -18,44 +18,64 @@
         app:srcCompat="@drawable/ic_launcher_mor" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Menu Principal"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"/>
-
-    <Button
-        android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Scan QRCode" />
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan QRCode"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/btnListar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Listar" />
+
+    </LinearLayout>
 
     <EditText
-        android:layout_width="250dp"
+        android:id="@+id/qrcode"
+        android:hint="Produto QRCode"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="TESTE"
-        android:id="@+id/teste"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"/>
+        android:enabled="false"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:id="@+id/peso"
+        android:hint="Peso em kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
-        android:id="@+id/btnTeste"
+        android:id="@+id/btnEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="TESTE" />
+        android:text="Gravar Informações"
+        android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/testeQRCode"
+    <Button
+        android:id="@+id/btnLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"/>
-
+        android:text="Limpar"
+        android:onClick="btnLimpar"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

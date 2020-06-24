@@ -2,22 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mor.com.scanqrcode">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@drawable/ic_launcher_mor"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_mor"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Main4Activity"></activity>
         <activity
             android:name=".Main3Activity"
             android:label="Metalurgica MOR" />
-        <activity android:name=".Main2Activity"
-            android:label="Metalurgica MOR"/>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".Main2Activity"
+            android:label="Metalurgica MOR" />
+        <activity
+            android:name=".MainActivity"
             android:label="Metalurgica MOR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
