@@ -64,7 +64,6 @@ public class Main2Activity extends AppCompatActivity
         // Pegando usuário do activity_main
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
-        Toast.makeText(this,user_name, Toast.LENGTH_SHORT).show();
         nome                = (EditText) findViewById(R.id.nome);
         nome.setText(user_name);
 
