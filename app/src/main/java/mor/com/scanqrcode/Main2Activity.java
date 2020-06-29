@@ -64,6 +64,7 @@ public class Main2Activity extends AppCompatActivity
         // Pegando usuário do activity_main
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
+        String user_pass    = extra.getString("user_pass");
         nome                = (EditText) findViewById(R.id.nome);
         nome.setText(user_name);
 
