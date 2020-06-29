@@ -61,7 +61,7 @@ public class Main2Activity extends AppCompatActivity
         qrcode              = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
 
 
-        // Pegando usuário do activity_main
+        // Pegando usuário do activity_login
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
         String user_pass    = extra.getString("user_pass");

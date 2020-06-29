@@ -5,20 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <!-- ### LOGIN ### -->
-
-    <Button
-        android:id="@+id/btnMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MENU"
-        android:onClick="btnMenu"
-        android:layout_gravity="center"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="395dp" />
-
     <ImageButton
         android:id="@+id/image_login_MOR"
         android:layout_width="match_parent"
