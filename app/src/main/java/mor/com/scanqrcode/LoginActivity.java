@@ -24,8 +24,10 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity
 {
-            String urlWebServicesDesenvolvimento = "http://192.168.2.42:80/sucata/validaLogin.php";
-            String urlWebServicesProducao = "";
+            String urlWebServicesLocal = " http://192.168.2.42:80/sucata/validaLogin.php";
+            String urlWebServicesDesenvolvimento = "http://10.10.100.24:80/sucata/validaLogin.php";
+            String urlWebServicesProducao = " http://192.168.2.42:80/sucata/validaLogin.php";
+
 
             StringRequest stringRequest; //validação login
             RequestQueue requestQueue;   //validação login

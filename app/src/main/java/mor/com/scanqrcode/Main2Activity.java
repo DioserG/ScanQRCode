@@ -89,7 +89,8 @@ public class Main2Activity extends AppCompatActivity
                     Toast.makeText(getApplicationContext(), "Campo não pode ficar vazio!", Toast.LENGTH_LONG).show();
                 }else
                  {
-                    executar("http://192.168.2.42:80/sucata/registro.php");
+                    //executar("http://192.168.2.42:80/sucata/registro.php"); //testes locais
+                     executar("http://10.10.100.24:80/sucata/registro.php"); //servidor desenvimento
                  }
             }
         }); // Fim chamada leitura QRCode
