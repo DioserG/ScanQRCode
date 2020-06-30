@@ -18,34 +18,13 @@
         app:srcCompat="@drawable/ic_launcher" />
 
     <TextView
-        android:text="Menu Principal"
+        android:text="Coleta de Dados de Sucatas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22sp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnScan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scan QRCode"
-            android:layout_gravity="center_horizontal"/>
-
-        <Button
-            android:id="@+id/btnListar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Listar" />
-
-    </LinearLayout>
 
     <EditText
         android:id="@+id/nome"
@@ -53,13 +32,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:enabled="false"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50sp"
         android:textColor="#ffffff"/>
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan QRCode"
+        android:layout_gravity="center_horizontal"/>
 
     <EditText
         android:id="@+id/qrcode"
-        android:hint="Produto QRCode"
+        android:hint="Identificação do Coletor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -72,22 +59,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:inputType="numberDecimal"
         android:textColor="#ffffff"/>
 
-    <Button
-        android:id="@+id/btnEnviar"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gravar Informações"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnLimpar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Limpar"
-        android:onClick="btnLimpar"
-        android:layout_gravity="center_horizontal"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gravar Informações" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLimpar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="btnLimpar"
+                android:text="Limpar" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

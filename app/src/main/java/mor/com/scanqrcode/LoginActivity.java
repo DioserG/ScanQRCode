@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity
                 }
                 if(validade)
                 {
-                    Toast.makeText(getApplicationContext(),"Validando seus dados ...espere",Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),"Validando seus dados ...espere",Toast.LENGTH_LONG).show();
                     validarLogin();
                 }
             }
@@ -86,8 +86,6 @@ public class LoginActivity extends AppCompatActivity
                 {
                     JSONObject jsonObject = new JSONObject(response);
                     boolean isErro = jsonObject.getBoolean("erro");
-                    String res = String.valueOf(isErro);
-                    Toast.makeText(getApplicationContext(),res,Toast.LENGTH_LONG).show();
 
                     if(isErro)
                     {
