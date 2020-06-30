@@ -42,11 +42,9 @@ import static android.os.Build.HOST;
 
 public class Main2Activity extends AppCompatActivity
 {
-
     Button   btnScan, btnEnviar;   // leitura do QRCode
     String   scan_valor;           // captura ao valor do QRCode
     EditText qrcode, peso, nome;   // Envia para o banco
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,15 +58,12 @@ public class Main2Activity extends AppCompatActivity
         peso                = (EditText) findViewById(R.id.peso);
         qrcode              = (EditText) findViewById(R.id.qrcode); // recebendo leitura do QRCode
 
-
         // Pegando usuário do activity_login
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
         String user_pass    = extra.getString("user_pass");
         nome                = (EditText) findViewById(R.id.nome);
         nome.setText(user_name);
-
-
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;
@@ -89,9 +84,13 @@ public class Main2Activity extends AppCompatActivity
         btnEnviar.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
-            {
-                executar("http://192.168.2.42:80/sucata/registro.php");
+            public void onClick(View v) {
+                if (qrcode.getText().length() == 0 || peso.getText().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Campo não pode ficar vazio!", Toast.LENGTH_LONG).show();
+                }else
+                 {
+                    executar("http://192.168.2.42:80/sucata/registro.php");
+                 }
             }
         }); // Fim chamada leitura QRCode
     }
@@ -111,9 +110,6 @@ public class Main2Activity extends AppCompatActivity
             }else
              {
                 alert("Scan cancelado!");
-                Intent intent  = new Intent(Main2Activity.this,
-                        Main2Activity.class);
-                startActivity(intent);
              }
         }else
          {
@@ -150,10 +146,10 @@ public class Main2Activity extends AppCompatActivity
             protected Map<String, String> getParams() throws AuthFailureError
             {
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("qrcode", qrcode.getText().toString());
-                parametros.put("peso",   peso.getText().toString());
-                parametros.put("nome",   nome.getText().toString());
-                return parametros;
+                    parametros.put("qrcode", qrcode.getText().toString());
+                    parametros.put("peso", peso.getText().toString());
+                    parametros.put("nome", nome.getText().toString());
+                    return parametros;
             }
           };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
