@@ -42,9 +42,9 @@ import static android.os.Build.HOST;
 
 public class Main2Activity extends AppCompatActivity
 {
-    Button   btnScan, btnEnviar;   // leitura do QRCode
-    String   scan_valor;           // captura ao valor do QRCode
-    EditText qrcode, peso, nome;   // Envia para o banco
+    Button   btnScan, btnEnviar;                 // leitura do QRCode
+    String   scan_valor;                         // captura ao valor do QRCode
+    EditText qrcode, peso, nome, nome_usuario;   // Envia e recebe banco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,9 +61,13 @@ public class Main2Activity extends AppCompatActivity
         // Pegando usuário do activity_login
         Bundle extra        = getIntent().getExtras();
         String user_name    = extra.getString("user_name");
-        String user_pass    = extra.getString("user_pass");
         nome                = (EditText) findViewById(R.id.nome);
         nome.setText(user_name);
+
+        //pegando do Login_Activity e setanoo na tela activity_main2
+        String nome_usuario1    = extra.getString("nome_usuario");
+        nome_usuario            = (EditText) findViewById(R.id.nome_usuario);
+        nome_usuario.setText(nome_usuario1);
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;

@@ -15,27 +15,89 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/ic_launcher" />
+        app:srcCompat="@drawable/ic_launcher"
+    />
 
     <TextView
         android:text="Coleta de Dados de Sucatas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="22sp"
+        android:layout_marginTop="24sp"
         android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+    />
 
-    <EditText
-        android:id="@+id/nome"
-        android:hint="Nome usuário logado"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:enabled="false"
-        android:layout_marginTop="50sp"
-        android:textColor="#ffffff"/>
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50sp"
+                android:hint="Nome: " />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/nome_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50sp"
+                android:enabled="false"
+                android:gravity="center"
+                android:hint="Nome usuário logado"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Usuário: " />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:enabled="false"
+                android:gravity="center"
+                android:hint="Usuário logado"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnScan"
@@ -45,16 +107,40 @@
         android:layout_gravity="center_horizontal"
         android:padding="20sp"/>
 
-    <EditText
-        android:id="@+id/qrcode"
-        android:hint="Identificação do Coletor"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:enabled="false"
-        android:textColor="#ffffff"/>
+        android:layout_gravity="center_horizontal">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Coletor: "/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/qrcode"
+                android:hint="Identificação do Coletor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:enabled="false"
+                android:textColor="#ffffff"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

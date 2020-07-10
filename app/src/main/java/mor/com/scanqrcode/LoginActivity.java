@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity
 {
             String urlWebServicesLocal = " http://192.168.2.42:80/sucata/validaLogin.php";
             String urlWebServicesDesenvolvimento = "http://10.10.100.24:80/sucata/validaLogin.php";
-            String urlWebServicesProducao = " http://192.168.2.42:80/sucata/validaLogin.php";
+            String urlWebServicesProducao = "";
 
 
             StringRequest stringRequest; //validação login
@@ -94,12 +94,13 @@ public class LoginActivity extends AppCompatActivity
                         Toast.makeText(getApplicationContext(),"Dados inválidos",Toast.LENGTH_LONG).show();
                     }else
                     {
+                        String nome_usuario  =(jsonObject.getString("nome_usuario")); // dados validaLogin.php
                         alert("Login realizado com sucesso");
 
                         Intent intent  = new Intent(LoginActivity.this,
                                 Main2Activity.class);
                         intent.putExtra("user_name", editLogin.getText().toString());
-                        intent.putExtra("user_pass", editSenha.getText().toString());
+                        intent.putExtra("nome_usuario", nome_usuario);
                         startActivity(intent);
                         finish();
                     }
