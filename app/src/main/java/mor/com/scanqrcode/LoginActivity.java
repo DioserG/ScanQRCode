@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity
 {
             String urlWebServicesLocal = " http://192.168.2.42:80/sucata/validaLogin.php";
             String urlWebServicesDesenvolvimento = "http://10.10.100.24:80/sucata/validaLogin.php";
-            String urlWebServicesProducao = "";
+            String urlWebServicesProducao = "http://192.168.1.23:80/sucata/validaLogin.php";
 
 
             StringRequest stringRequest; //validação login
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity
 
     private void validarLogin()
     {
-        stringRequest = new StringRequest(Request.Method.POST, urlWebServicesDesenvolvimento, new Response.Listener<String>()
+        stringRequest = new StringRequest(Request.Method.POST, urlWebServicesProducao, new Response.Listener<String>()
         {
             @Override
             public void onResponse(String response)
