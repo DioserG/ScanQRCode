@@ -22,30 +22,34 @@
         android:textAppearance="?android:textAppearanceLarge"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="40sp"/>
 
     <EditText
-        android:layout_width="250dp"
+        android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:hint="Usuario"
         android:id="@+id/user_name"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginTop="70dp"
+        android:textSize="35sp"/>
 
     <EditText
-        android:layout_width="250dp"
+        android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:hint="Senha"
         android:id="@+id/user_pass"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:textSize="35sp"/>
 
     <Button
         android:id="@+id/btnLogar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrar"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="35sp"/>
 
 </LinearLayout>
