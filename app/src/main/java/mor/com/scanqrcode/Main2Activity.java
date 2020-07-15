@@ -44,8 +44,8 @@ public class Main2Activity extends AppCompatActivity
 {
     Button   btnScan, btnEnviar;                 // leitura do QRCode
     String   scan_valor;                         // captura ao valor do QRCode
-    EditText qrcode, peso, nome, nome_usuario;   // Envia e recebe banco;
-
+    EditText qrcode, peso, nome;   // Envia e recebe banco;
+    EditText nome_usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -65,9 +65,9 @@ public class Main2Activity extends AppCompatActivity
         nome.setText(user_name);
 
         //pegando do Login_Activity e setanoo na tela activity_main2
-        String nome_usuario1    = extra.getString("nome_usuario");
-        nome_usuario            = (EditText) findViewById(R.id.nome_usuario);
-        nome_usuario.setText(nome_usuario1);
+        //String nome_usuario1    = extra.getString("nome_usuario");
+        //nome_usuario            = (EditText) findViewById(R.id.nome_usuario);
+        //nome_usuario.setText(nome_usuario1);
 
         // Inicio chamada leitura QRCode
         final Activity activity = this;
@@ -138,7 +138,7 @@ public class Main2Activity extends AppCompatActivity
             @Override
             public void onResponse(String response)
             {
-                Toast.makeText(getApplicationContext(), "Conexão realizada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Gravado com Sucesso", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener()
         {

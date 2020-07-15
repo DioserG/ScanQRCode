@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zxing_custom_viewfinder_laser"
     android:orientation="vertical"
     tools:context=".Main2Activity">
 
@@ -19,14 +18,14 @@
     />
 
     <TextView
-        android:text="Coleta de Dados de Sucatas"
+        android:text="Controle de Sucatas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24sp"
         android:textAppearance="?android:textAppearanceLarge"
         android:textStyle="bold"
-        android:textSize="35sp"
+        android:textSize="28sp"
     />
 
     <LinearLayout
@@ -39,14 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50sp"
-                android:hint="Nome: "
-                android:textSize="35sp"
-            />
+        />
         </RelativeLayout>
 
         <RelativeLayout
@@ -56,18 +48,6 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/nome_usuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50sp"
-                android:enabled="false"
-                android:gravity="center"
-                android:hint="Nome usuário logado"
-                android:textColor="#ffffff"
-                android:textSize="35sp"
-            />
         </RelativeLayout>
     </LinearLayout>
 
@@ -84,8 +64,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Usuário: "
-                android:textSize="35sp"/>
+                android:hint=" Usuário: "
+                android:textSize="30sp"
+                android:textColor="@color/colorBlack"
+            />
         </RelativeLayout>
 
         <RelativeLayout
@@ -101,8 +83,8 @@
                 android:enabled="false"
                 android:gravity="center"
                 android:hint="Usuário logado"
-                android:textColor="#ffffff"
-                android:textSize="35sp"
+                android:textColor="@color/colorBlack"
+                android:textSize="30sp"
             />
         </RelativeLayout>
     </LinearLayout>
@@ -114,7 +96,7 @@
         android:text="Scan QRCode"
         android:layout_gravity="center_horizontal"
         android:padding="20sp"
-        android:textSize="35sp"
+        android:textSize="30sp"
     />
 
     <LinearLayout
@@ -148,7 +130,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:inputType="number"
-                android:textColor="#ffffff"
+                android:textColor="@color/colorBlack"
                 android:textSize="35sp"
             />
         </RelativeLayout>
@@ -170,6 +152,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Peso: "
                 android:textSize="35sp"
+                android:textColor="@color/colorBlack"
             />
         </RelativeLayout>
 
@@ -180,13 +163,13 @@
 
             <EditText
                 android:id="@+id/peso"
-                android:hint="Peso em kg"
+                android:hint="em kg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:textColor="#ffffff"
+                android:textColor="@color/colorBlack"
                 android:textSize="35sp"
             />
 
@@ -209,9 +192,9 @@
                 android:id="@+id/btnEnviar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="20sp"
-                android:text="Gravar Informações"
-                android:textSize="35sp"
+                android:padding="10sp"
+                android:text="Gravar"
+                android:textSize="30sp"
             />
         </RelativeLayout>
         <RelativeLayout
@@ -224,10 +207,10 @@
                 android:id="@+id/btnLimpar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="20sp"
+                android:padding="10sp"
                 android:onClick="btnLimpar"
                 android:text="Limpar"
-                android:textSize="35sp"
+                android:textSize="30sp"
             />
         </RelativeLayout>
     </LinearLayout>

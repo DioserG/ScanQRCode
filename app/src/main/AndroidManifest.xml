@@ -18,10 +18,10 @@
             android:label="Metalurgica MOR" />
         <activity
             android:name=".Main2Activity"
-            android:label="Metalurgica MOR" android:windowSoftInputMode="adjustResize"/>
+            android:label="Metalurgica MOR"/>
         <activity
             android:name=".LoginActivity"
-            android:label="Metalurgica MOR" android:windowSoftInputMode="adjustResize">
+            android:label="Metalurgica MOR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
