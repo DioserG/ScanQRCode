@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity
 {
             String urlWebServicesLocal = " http://192.168.2.42:80/sucata/validaLogin.php";
             String urlWebServicesDesenvolvimento = "http://10.10.100.24:80/sucata/validaLogin.php";
+            String urlWebServicesHomologacao = "http://192.168.1.23:80/sucata_chamados/validaLogin.php";
             String urlWebServicesProducao = "http://192.168.1.23:80/sucata/validaLogin.php";
 
 

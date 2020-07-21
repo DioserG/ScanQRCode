@@ -42,8 +42,8 @@ import static android.os.Build.HOST;
 
 public class Main2Activity extends AppCompatActivity
 {
-    Button   btnScan, btnEnviar;                 // leitura do QRCode
-    String   scan_valor;                         // captura ao valor do QRCode
+    Button   btnScan, btnEnviar;   // leitura do QRCode
+    String   scan_valor;           // captura ao valor do QRCode
     EditText qrcode, peso, nome;   // Envia e recebe banco;
     EditText nome_usuario;
     @Override
@@ -94,8 +94,9 @@ public class Main2Activity extends AppCompatActivity
                 }else
                  {
                     //executar("http://192.168.2.42:80/sucata/registro.php"); //testes locais
-                     //executar("http://10.10.100.24:80/sucata/registro.php"); //servidor desenvimento
-                     executar("http://192.168.1.23:80/sucata/registro.php");
+                    //executar("http://10.10.100.24:80/sucata/registro.php"); //servidor desenvolvimento
+                    //executar("http://192.168.1.23:80/sucata_chamados/registro.php"); //servidor homologação
+                     executar("http://192.168.1.23:80/sucata/registro.php"); //servidor produção
                  }
             }
         }); // Fim chamada leitura QRCode
