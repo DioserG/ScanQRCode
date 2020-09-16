@@ -34,6 +34,7 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import java.util.ResourceBundle;
+import com.loopj.android.http.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,6 +47,7 @@ public class Main2Activity extends AppCompatActivity
     String   scan_valor;           // captura ao valor do QRCode
     EditText qrcode, peso, nome;   // Envia e recebe banco;
     EditText nome_usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -64,7 +66,7 @@ public class Main2Activity extends AppCompatActivity
         nome                = (EditText) findViewById(R.id.nome);
         nome.setText(user_name);
 
-        //pegando do Login_Activity e setanoo na tela activity_main2
+        //pegando do Login_Activity e setando na tela activity_main2
         //String nome_usuario1    = extra.getString("nome_usuario");
         //nome_usuario            = (EditText) findViewById(R.id.nome_usuario);
         //nome_usuario.setText(nome_usuario1);
@@ -94,9 +96,9 @@ public class Main2Activity extends AppCompatActivity
                 }else
                  {
                     //executar("http://192.168.2.42:80/sucata/registro.php"); //testes locais
-                    //executar("http://10.10.100.24:80/sucata/registro.php"); //servidor desenvolvimento
+                      executar("http://10.10.100.24:80/sucata/registro.php"); //servidor desenvolvimento
                     //executar("http://192.168.1.23:80/sucata_chamados/registro.php"); //servidor homologação
-                     executar("http://192.168.1.23:80/sucata/registro.php"); //servidor produção
+                    //executar("http://192.168.1.23:80/sucata/registro.php"); //servidor produção
                  }
             }
         }); // Fim chamada leitura QRCode
@@ -169,5 +171,12 @@ public class Main2Activity extends AppCompatActivity
     {
         qrcode.setText("");
         peso.setText("");
+    }
+
+    public void btnRelatório(View view) {
+        Intent intent  = new Intent(Main2Activity.this,
+                Main3Activity.class);
+                startActivity(intent);
+
     }
 }

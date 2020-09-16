@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity
 
     private void validarLogin()
     {
-        stringRequest = new StringRequest(Request.Method.POST, urlWebServicesProducao, new Response.Listener<String>()
+        stringRequest = new StringRequest(Request.Method.POST, urlWebServicesDesenvolvimento, new Response.Listener<String>()
         {
             @Override
             public void onResponse(String response)
