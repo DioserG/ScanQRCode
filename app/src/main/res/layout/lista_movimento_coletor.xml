@@ -4,37 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <TextView
             android:id="@+id/txUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="usuario"/>
+            android:text="usuario"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+        />
         <TextView
             android:id="@+id/txColetor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="coletor"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:text="coletor"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+        />
         <TextView
             android:id="@+id/txPeso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="peso"/>
+            android:text="peso"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+        />
         <TextView
             android:id="@+id/txData_Hora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="data_hora"/>
+            android:text="data_hora"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+        />
     </LinearLayout>
-
-
 </LinearLayout>

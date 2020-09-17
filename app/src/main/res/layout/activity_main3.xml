@@ -7,37 +7,46 @@
     android:orientation="vertical"
     tools:context=".Main3Activity">
 
-    <Button
-        android:id="@+id/btnBuscaTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:text="Movimento Geral"
-        android:textSize="30sp"
-    />
 
-    <Button
-        android:id="@+id/btnBuscaDia"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:text="Dia"
-        android:textSize="30sp"
-    />
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBuscaTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="Geral"
+                android:textSize="30sp"
+            />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBuscaDia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="Dia"
+                android:textSize="30sp"
+            />
+        </RelativeLayout>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listView_coletar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:text="Voltar"
-        android:textSize="30sp"
-    />
-
 </LinearLayout>

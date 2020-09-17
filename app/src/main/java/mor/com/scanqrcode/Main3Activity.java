@@ -1,8 +1,10 @@
 package mor.com.scanqrcode;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,11 +21,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -105,15 +108,22 @@ public class Main3Activity extends AppCompatActivity {
                             data_hora = Jasonobject.getString("data_hora");
                             //Toast.makeText(getApplicationContext(), usuario, Toast.LENGTH_LONG).show();
 
-                            items.put("usuario", "  Usuário: " + usuario);
-                            items.put("coletor", "  Coletor: " + coletor);
-                            items.put("peso", "  Peso Bruto: " + peso);
-                            items.put("data_hora", "  Data/Hora: " + data_hora);
+                            items.put("usuario", "   Usuário: " + usuario);
+                            items.put("coletor", "   Coletor: " + coletor);
+                            items.put("peso", "   Peso Bruto: " + peso);
+                            items.put("data_hora", "   Data/Hora: " + data_hora);
                             lista.add(items);
                         }
 
                         adapter = new listaMovimento( getApplication(), lista, R.layout.lista_movimento_coletor, de, para);
                         listView.setAdapter(adapter);
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                Map<String,Object> item = lista.get(i);
+                                String posicao = (String.valueOf(l+1));
+                            }
+                        });;
                     }
                     catch (Exception e)
                     {
@@ -178,10 +188,10 @@ public class Main3Activity extends AppCompatActivity {
                         data_hora = Jasonobject.getString("data_hora");
                         //Toast.makeText(getApplicationContext(), usuario, Toast.LENGTH_LONG).show();
 
-                        items.put("usuario", "  Usuário: " + usuario);
-                        items.put("coletor", "  Coletor: " + coletor);
-                        items.put("peso", "  Peso Bruto: " + peso);
-                        items.put("data_hora", "  Data/Hora: " + data_hora);
+                        items.put("usuario", "   Usuário: " + usuario + " ");
+                        items.put("coletor", "   Coletor: " + coletor + " ");
+                        items.put("peso", "   Peso Bruto: " + peso + " ");
+                        items.put("data_hora", "   Data/Hora: " + data_hora + " ");
                         lista.add(items);
                     }
 
@@ -202,7 +212,7 @@ public class Main3Activity extends AppCompatActivity {
             }
         })
         {
-            @Override
+            @Override // envia valor para .php por POST
             protected Map<String, String> getParams()
             {
                 Map<String, String> params = new HashMap<>();
